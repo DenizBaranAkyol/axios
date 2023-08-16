@@ -38,7 +38,135 @@
         <div style="  background-color: #D9D9D9; " class="header col-sm-12">
 
           <!-------------------------------------------------------------------------------------------------------------------------->
-         
+          <table v-show="showUsers" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Adress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Users.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>@{{ user.email }}</td>
+                <td>@{{ user.address.street + " " + user.address.suite + " " + user.address.city + " " +
+                  user.address.zipcode }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!---------------------------------------------------------------------------------------------------------------------------->
+
+          <table v-show="showPost" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">TİTLE</th>
+                <th scope="col">BODY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Posts.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.title }}</td>
+                <td>{{ user.body }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!---------------------------------------------------------------------------------------------------------------------------->
+
+          <table v-show="showComment" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">EMAİL</th>
+                <th scope="col">BODY</th>
+                <th scope="col">POST ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Comments.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.body }}</td>
+                <td>{{ user.postId }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!---------------------------------------------------------------------------------------------------------------------------->
+
+          <table v-show="showAlbum" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ıD</th>
+                <th scope="col">TİTLE</th>
+                <th scope="col">USER ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Albums.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.title }}</td>
+                <td>{{ user.userId }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!---------------------------------------------------------------------------------------------------------------------------->
+
+          <table v-show="showPhotos" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">ALBUM ID</th>
+                <th scope="col">TİTLE</th>
+                <th scope="col">PHOTOS</th>
+                <th scope="col">THUMBNAİL URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Photos.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.albumId }}</td>
+                <td>{{ user.title }}</td>
+                <td> <img v-bind:src="user.url" width="50px" height="50px" alt=""></td>
+                <td>{{ user.thumbnailUrl }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!---------------------------------------------------------------------------------------------------------------------------->
+
+          <table v-show="showTodos" class="table table-hover table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">USER ID</th>
+                <th scope="col">TİTLE</th>
+                <th scope="col">COMPLETED</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Todos.data">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.userId }}</td>
+                <td>{{ user.title }}</td>
+                <td> <input v-if="user.completed" type="checkbox" name="" id="" checked>
+                  <input v-else type="checkbox" name="" id="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
