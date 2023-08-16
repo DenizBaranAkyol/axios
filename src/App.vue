@@ -180,7 +180,35 @@ export default {
     name: 'app',
     data() {
         return {
-            
+            postData: {
+                id: null,
+                title: null,
+                body: null,
+            },
+            showUsers: false,
+            showTodos: false,
+            showAlbum: false,
+            showPhotos: false,
+            showComment: false,
+            showPost: false,
+            Posts: {
+                data: null,
+            },
+            Comments: {
+                data: null,
+            },
+            Albums: {
+                data: null
+            },
+            Photos: {
+                data: null,
+            },
+            Todos: {
+                data: null,
+            },
+            Users: {
+                data: null,
+            }
         };
     },
     methods: {
