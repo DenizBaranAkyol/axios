@@ -27,7 +27,12 @@
       <div style="margin-left: -15px; background-color: #D9D9D9;" class=" col">
         <div style="height: 80px;  background-color: #D9D9D9;" class="header   col-sm-12">
 
-        
+          <p id="p" v-show="showUsers"> <i class="fa-solid fa-user"></i> USERS</p>
+          <p id="p" v-show="showTodos"> <i class="fa-solid fa-list"></i> TODOS</p>
+          <p id="p" v-show="showAlbum"> <i class="fa-solid fa-photo-film"></i> ALBUM</p>
+          <p id="p" v-show="showPhotos"> <i class="fa-solid fa-image"></i> PHOTOS</p>
+          <p id="p" v-show="showComment"> <i class="fa-solid fa-comment"></i> COMMENT</p>
+          <p id="p" v-show="showPost"> <i class="fa-regular fa-address-card"></i> POST</p>
 
         </div>
         <div style="  background-color: #D9D9D9; " class="header col-sm-12">
