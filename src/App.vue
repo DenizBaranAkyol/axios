@@ -212,7 +212,78 @@ export default {
         };
     },
     methods: {
-    
+        getPosts: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/posts`)
+                .then(response => {
+                this.Posts.data = response.data;
+                this.showPost = true;
+                this.showComment = false,
+                    this.showAlbum = false;
+                this.showPhotos = false;
+                this.showTodos = false;
+                this.showUsers = false;
+            });
+        },
+        getComments: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/comments`)
+                .then(response => {
+                this.Comments.data = response.data;
+                this.showPost = false;
+                this.showComment = true,
+                    this.showAlbum = false;
+                this.showPhotos = false;
+                this.showTodos = false;
+                this.showUsers = false;
+            });
+        },
+        getAlbums: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/albums`)
+                .then(response => {
+                this.Albums.data = response.data;
+                this.showPost = false;
+                this.showComment = false;
+                this.showAlbum = true;
+                this.showPhotos = false;
+                this.showTodos = false;
+                this.showUsers = false;
+            });
+        },
+        getPhotos: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/photos`)
+                .then(response => {
+                this.Photos.data = response.data;
+                this.showPost = false;
+                this.showComment = false,
+                    this.showAlbum = false;
+                this.showPhotos = true;
+                this.showTodos = false;
+                this.showUsers = false;
+            });
+        },
+        getTodos: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/todos`)
+                .then(response => {
+                this.Todos.data = response.data;
+                this.showPost = false;
+                this.showComment = false;
+                this.showAlbum = false;
+                this.showPhotos = false;
+                this.showTodos = true;
+                this.showUsers = false;
+            });
+        },
+        getUsers: function () {
+            axios.get(`https://jsonplaceholder.typicode.com/users`)
+                .then(response => {
+                this.Users.data = response.data;
+                this.showPost = false;
+                this.showComment = false;
+                this.showAlbum = false;
+                this.showPhotos = false;
+                this.showTodos = false;
+                this.showUsers = true;
+            });
+        },
     },
    
 }
