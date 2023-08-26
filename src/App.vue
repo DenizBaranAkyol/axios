@@ -15,9 +15,10 @@
         </div>
         <!-- TABLE -->
 
-        <appPostTable :todosData="Todos.data" :usersData="Users.data" :photosData="Photos.data" :albumsData="Albums.data"
-          :gelenData="gelenData" :commentsData="Comments.data" :show="showPost" :postData="Posts.data">
-        </appPostTable>
+        <appTableComponent :todosData="Todos.data" :usersData="Users.data" :photosData="Photos.data"
+          :albumsData="Albums.data" :gelenData="gelenData" :commentsData="Comments.data" :show="showPost"
+          :postData="Posts.data">
+        </appTableComponent>
       </div>
     </div>
   </div>
@@ -25,7 +26,7 @@
 
 <script>
 import axios from "axios";
-import PostTable from "./components/Tables/PostTable.vue";
+import TableComponent from "./components/Tables/TableComponent.vue";
 import LeftSideBar from "./components/Common/LeftSideBar.vue";
 import Header from "./components/Common/Header.vue";
 export default {
@@ -147,7 +148,7 @@ export default {
     }
   },
   components: {
-    appPostTable: PostTable,
+    appTableComponent: TableComponent,
     appLeftSideBar: LeftSideBar,
     appHeader: Header,
   }
